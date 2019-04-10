@@ -1,6 +1,6 @@
 spring:
   application:
-    name: SPS-ACAD-AC15-US15-DATES
+    name: POC-DATES
   activemq:
     broker-url: tcp://localhost:61616
     user: admin
