@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="Dates">
+    <feature name="Dates" description="Dates Service" version="0.0.1.SNAPSHOT">
+        <feature version="2.16.5">camel-cxf</feature>
+        <feature version="2.16.5">camel-jackson</feature>
+        <feature version="2.16.5">camel-jsonpath</feature>
+        <feature version="2.16.5">camel-sql</feature>        
+        <feature version="5.14.5">activemq-camel</feature>
+        <feature version="2.16.5">camel-dozer</feature>
+        <feature version="2.16.5">camel-ftp</feature>
+        <feature version="2.16.5">camel-gson</feature>
+        <feature version="2.16.5">camel-mail</feature>
+        <feature version="2.16.5">camel-quartz</feature>
+        <bundle>mvn:mysql/mysql-connector-java/8.0.11</bundle>        
+        <bundle>mvn:org.apache.commons/commons-dbcp2/2.1</bundle>
+        <bundle>mvn:com.oup.integration.sps.acad/acad-dates/0.0.1-SNAPSHOT</bundle>
+    </feature>
+</features>

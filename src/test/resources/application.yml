@@ -1,0 +1,40 @@
+spring:
+
+  activemq:
+    broker-url: vm://embedded?broker.persistent=false,useShutdownHook=false
+    in-memory: true
+
+  datasource:
+    url: jdbc:h2:mem:sps;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: root
+    password: root
+    driver-class-name: org.h2.Driver
+
+server:
+  port: 8080  
+
+eureka:
+   client:
+    enabled: false
+
+activemq:
+
+    queuename: queue:POC-DATES-DEV    
+
+    corntab:
+
+      starttime: 0 0,10,20,30,40,56 * * * ? *
+
+      stoptime: 0 9,19,29,39,49,59 * * * ? *
+
+file:
+  backup:
+    location: ${java.io.tmpdir}   
+
+ftp:
+  server: localhost
+  port: 9999
+  username: ftpunix
+  password: 12Xdirect
+  drop:
+    location: /acad_abc_dev/Export

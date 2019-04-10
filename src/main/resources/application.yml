@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: SPS-ACAD-AC15-US15-DATES
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: admin   
+  datasource:
+    url: jdbc:mysql://localhost:3306/poc
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+      
+server:
+  port: 8080  
+eureka:
+  client:
+    enabled: false
+ 
+activemq:
+    uk:
+      queuename: queue:POC-DEV
+      corntab:
+        timezone: Europe/London
+        starttime: 0 0,10,20,30,40,50 * * * ? *
+        stoptime: 0 9,19,29,39,49,59 * * * ? *
+    
+file:
+  backup:
+    location: C:\\JavaTest\\POC_Dates\\      
+    
+ftp:
+  uk: 
+    server: localhost
+    port: 21
+    username: ftpuser
+    password: ftppass
+    drop:
+      location: /acad_abc_qa/Export
+  
+    
+camel:
+  springboot:
+    main-run-controller: true
+    
+hawtio:
+  authenticationEnabled: false
+  offline: true
+  
+endpoints:
+  jolokia:
+    sensitive: false
+management:
+  security:
+    enabled: false
+  metrics:
+    export:
+      prometheus: 
+        enabled: true
+    distribution:
+      percentiles[http.server.requests]: 0.95, 0.99
+      percentiles-histogram[http.server.requests]: true
+      sla[http.server.requests]: 10ms, 100ms 
+
